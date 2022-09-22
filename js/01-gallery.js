@@ -24,9 +24,20 @@ function createPicturesMarkup(galleryItems) {
 galleryContainer.addEventListener('click', onGalleryContainerClick);
 
 function onGalleryContainerClick(e) {
-    e.preventDefault();
-    if (e.target.className === galleryItems.preview) {
+  e.preventDefault();
+  if (e.target === e.currentTarget) {
     return;
   };
+  const currentImage = e.target;
+  console.log(`"Current image:${currentImage.dataset.source}"`);
+
+const instance = basicLightbox.create(`
+    <div class="modal">
+        <img src="${currentImage.dataset.source}"/>
+    </div>
+`);
+  instance.show();
+  
 };
-console.log(galleryItems);
+
+  console.log(galleryItems);
