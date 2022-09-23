@@ -36,8 +36,9 @@ const instance = basicLightbox.create(`
         <img src="${currentImage.dataset.source}"/>
     </div>
 `);
-  instance.show();
   
+  instance.show();
+
 };
 
   console.log(galleryItems);
