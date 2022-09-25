@@ -31,14 +31,14 @@ function onGalleryContainerClick(e) {
   const currentImage = e.target;
   console.log(`"Current image:${currentImage.dataset.source}"`);
 
-const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(`
     <div class="modal">
         <img src="${currentImage.dataset.source}"/>
     </div>
 `);
   
   instance.show();
-
+  
 };
 
   console.log(galleryItems);
