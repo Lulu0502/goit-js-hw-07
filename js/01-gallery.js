@@ -33,12 +33,18 @@ function onGalleryContainerClick(e) {
 
   const instance = basicLightbox.create(`
     <div class="modal">
-        <img src="${currentImage.dataset.source}"/>
+        <img
+        src="${currentImage.dataset.source}"
+        />
     </div>
 `);
   
   instance.show();
-  
+  galleryContainer.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      instance.close()
+    }
+  })
 };
 
   console.log(galleryItems);
