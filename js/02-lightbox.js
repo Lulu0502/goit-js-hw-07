@@ -12,16 +12,14 @@ const markup = galleryItems.map(
     .join("");
 
 gallery.insertAdjacentHTML("beforeend", markup);
-gallery.addEventListener("click", onItemClick);
 
-function onItemClick(e) {
-    e.preventDefault();
 
-    var lightbox = new SimpleLightbox(".gallery a", {
-        captionData: "alt",
-        captionDelay: 250,
-    })
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+    captions: true,
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
+});
 
 console.log(galleryItems);
 
